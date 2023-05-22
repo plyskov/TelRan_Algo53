@@ -166,14 +166,15 @@ public class CustomDynamicArray implements Iterable<Integer> {
     @Override
     public Iterator<Integer> iterator() {
         return new Iterator<Integer>() {
+            int current = 0;
             @Override
             public boolean hasNext() {
-                return false;
+                return current < count;
             }
 
             @Override
             public Integer next() {
-                return null;
+                return array[current++];
             }
         };
     }
